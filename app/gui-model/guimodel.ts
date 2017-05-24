@@ -71,7 +71,7 @@
                         {
                             "type": "okButton",
                             "name": "Ok"
-                        }
+                        },
                     ]
                 },
 		{
@@ -96,7 +96,7 @@
 			{
 				"type": "okButton",
 				"name": "Ok"
-			}
+			},
 			]
 		},
 		{
@@ -122,7 +122,7 @@
 			{
 				"type": "okButton",
 				"name": "Ok"
-			}
+			},
 			]
 		},
 		{
@@ -156,7 +156,7 @@
 			{
 				"type": "okButton",
 				"name": "Ok"
-			}
+			},
 			]
 		},
                 {
@@ -181,10 +181,11 @@
                         {
                             "type": "okButton",
                             "name": "Ok"
-                        }
+                        },
                     ]
-                }
-            ],
+                },
+            ]
+	},
             "pageList": [
                 {
                     "id": "mainmenu",
@@ -340,10 +341,10 @@
                 }
             ]
         }
-    };
+    },
 
 
     get guiModel() {
         return this._guiModel;
     }
-}
+},
