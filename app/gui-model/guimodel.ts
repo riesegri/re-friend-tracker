@@ -71,7 +71,7 @@
                         {
                             "type": "okButton",
                             "name": "Ok"
-                        },
+                        }
                     ]
                 },
 		{
@@ -86,6 +86,20 @@
 				"required": true
 			},
 			{
+                            "id": "evtBirth",
+                            "type": "date",
+                            "name": "CreatedOn",
+                            "width": 2
+                        },
+ 			{
+                            "id": "comment",
+                            "type": "text",
+                            "name": "Comments",
+                            "width": 2,
+                            "height": 4,
+                            "maxLength": 5000,
+                        },
+			{
 				"type": "deleteButton",
 				"name": "Delete"
 			},
@@ -94,9 +108,15 @@
 				"name": "Cancel"
 			},
 			{
+                            "id": "evtBirth",
+                            "type": "date",
+                            "name": "CreatedOn",
+                            "width": 2
+                        },
+			{
 				"type": "okButton",
 				"name": "Ok"
-			},
+			}
 			]
 		},
 		{
@@ -107,10 +127,18 @@
 				"id": "activity",
 				"type": "autocomplete",
 				"name": "Activity",
-				"data": [ "Cinema", "Hike", "Hang Out" ],
+				"data": [ "Cinema", "Hike", "HangOut" ],
 				"form": "GroupForm",
 				"width": 2
 			},
+			{
+                            "id": "comment",
+                            "type": "text",
+                            "name": "Comments",
+                            "width": 2,
+                            "height": 4,
+                            "maxLength": 5000,	
+                        },
 			{
 				"type": "deleteButton",
 				"name": "Delete"
@@ -122,7 +150,7 @@
 			{
 				"type": "okButton",
 				"name": "Ok"
-			},
+			}
 			]
 		},
 		{
@@ -133,7 +161,7 @@
 				"id": "activity",
 				"type": "autocomplete",
 				"name": "Activity",
-				"data": [ "Cinema", "Hike", "Hang Out" ],
+				"data": [ "Cinema", "Hike", "HangOut" ],
 				"form": "GroupForm",
 				"width": 2
 			},
@@ -156,7 +184,7 @@
 			{
 				"type": "okButton",
 				"name": "Ok"
-			},
+			}
 			]
 		},
                 {
@@ -170,6 +198,14 @@
                             "width": 2,
                             "required": true
                         },
+			{
+                            "id": "comment",
+                            "type": "text",
+                            "name": "Comments",
+                            "width": 2,
+                            "height": 4,
+                            "maxLength": 5000,
+                        },
                         {
                             "type": "deleteButton",
                             "name": "Delete"
@@ -181,11 +217,10 @@
                         {
                             "type": "okButton",
                             "name": "Ok"
-                        },
+                        }
                     ]
-                },
-            ]
-	},
+                }
+            ],
             "pageList": [
                 {
                     "id": "mainmenu",
@@ -241,6 +276,40 @@
 				},
 				]
 		},
+		{
+				"id": "activiestakenpartspage",
+				"elementList": [
+				{
+					"type": "backbutton",
+				},
+				{
+					"type": "list",
+					"icon": "fa-weixin",
+					"color": "wisteria",
+					"search": false,
+					"data": [ { name: "Hike" }, { name: "Cinema" }, { name: "Cinema"},{ name: "Hike" }, { name: "HangOut" }, ],
+					"form": {
+					"form": "GroupForm"
+					}
+				},
+				]
+		},
+		{
+				"id": "participants",
+				"elementList": [
+				{
+					"type": "backbutton",
+				},
+				{
+                            		"type": "list",
+                            		"icon": "fa-user",
+                            		"color": "blue",
+                            		"search": false,
+                            		"data": [ { name: "Anton Amacker" }, { name: "Britta Beavers"} ],
+                            		"page": "activityspage",
+                        },
+				]
+		},
 
 		{
 					"id": "activityspage",
@@ -275,14 +344,19 @@
 							}
 						}
 						{
+							"type": "newButton",
+							"name": "ActivityHistory",
+							"icon": "fa-weixin",
+							"color": "red",
+							"page": "activiestakenpartspage",
+						}
+						{
 							"type": "list",
 							"icon": " fa-hand-peace-o",
 							"color": "wisteria",
 							"search": true,
 							"data": [ { name: "Cinema" }, { name: "Hike" }, { name: "Hang out"} ],
-							"form": {
-							"form": "AddActivityForm"
-							}
+							"page": "participants", 
 						},
 						]
 						
@@ -333,18 +407,16 @@
                             "color": "blue",
                             "search": true,
                             "data": [ { name: "Adelboden" }, { name: "Winterthur" }, { name: "Zinal"}, { name: "Zürich"} ],
-                            "form": {
-                                "form": "LocationForm"
-                            }
+                            "page": "activiestakenpartspage",
                         },
                     ]
                 }
             ]
         }
-    },
+    };
 
 
     get guiModel() {
         return this._guiModel;
     }
-},
+}
