@@ -263,7 +263,7 @@
 					"form": {
 					"form": "GroupForm"
 					}
-					}
+					},
 				{
 					"type": "list",
 					"icon": "fa-weixin",
@@ -325,6 +325,7 @@
 							"form": {
 							"form": "FriendForm"
 							}
+						},
 						{
 							"type": "newButton",
 							"name": "EditActivity",
@@ -333,7 +334,7 @@
 							"form": {
 							"form": "EditActivityForm"
 							}
-						}
+						},
 						{
 							"type": "newButton",
 							"name": "AddActivity",
@@ -342,14 +343,14 @@
 							"form": {
 							"form": "AddActivityForm"
 							}
-						}
+						},
 						{
 							"type": "newButton",
 							"name": "ActivityHistory",
 							"icon": "fa-weixin",
 							"color": "red",
 							"page": "activiestakenpartspage",
-						}
+						},
 						{
 							"type": "list",
 							"icon": " fa-hand-peace-o",
